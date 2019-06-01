@@ -17,11 +17,10 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 
-from controledental.base.views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home)
+    path('', include('controledental.base.urls'), name='home')
 ]
 
 if settings.DEBUG:
