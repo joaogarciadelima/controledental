@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Controle dental!</title>
+    <title>Pacientes</title>
 
     <meta name="description" content="Página para controle de pacientes">
     <meta name="author" content="João Garcia">
@@ -56,42 +56,38 @@
     </div>
 </nav>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="jumbotron">
-                <h2>
-                    Hello, world!
-                </h2>
-                <p>
-                    This is a template for a simple marketing or informational website. It includes a large callout
-                    called the hero unit and three supporting pieces of content. Use it as a starting point to create
-                    something more unique.
-                </p>
-                <p>
-                    <a class="btn btn-primary btn-large" href="#">Learn more</a>
-                </p>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <h5 class="card-header">
-                            Card title
-                        </h5>
-                        <div class="card-body">
-                            <p class="card-text">
-                                Card content
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            Card footer
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th>Nome</th>
+        <th>Endereco</th>
+        <th>Telefone</th>
+
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for paciente in Pacientes %}
+        <tr>
+            <td>{{ paciente.nome }}</td>
+            <td>{{ paciente.endereco }}</td>
+            <td>{{ paciente.telefone }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{#{% else %}#}
+{#<div class="text-center mt-5 mb-5 jumbotron">#}
+{#    <h5>Nenhum <code>Paciente</code> cadastrado ainda.</h5>#}
+{#</div>#}
+{#{% endif %}#}
+
+{#<div class="text-right">#}
+{#    <a href="{% url 'CadastroFuncionario' %}" class="btn btn-primary">#}
+{#        Cadastrar Funcionário#}
+{#    </a>#}
+{#</div>#}
 
 </body>
 </html>

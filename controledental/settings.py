@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'collectfast',
     'django.contrib.staticfiles',
-    'controledental.base'
+    'controledental.base',
+    'controledental.pacientes',
 ]
 
 MIDDLEWARE = [
