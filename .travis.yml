@@ -16,8 +16,6 @@ env:
     - PIPENV_IGNORE_VIRTUALENVS = 1
 
 install:
-  - sudo python -m pip install --upgrade pip
-  - sudo pip install --upgrade setuptools
   - pip install pipenv
   - pipenv sync -d
   - cp contrib/env_sample .env
