@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 from controledental.pacientes.models import Paciente
 from controledental.cadastrotratamento.models import CadastroTratamento
@@ -50,9 +51,11 @@ class Tratamento(models.Model):
     ]
     dente = models.CharField(max_length=60, choices=DENTE, verbose_name='Dente')
     observacao = models.CharField(max_length=5000, verbose_name="Observação")
+    data_tratamento = models.DateField(verbose_name="Data Tratamento", default=timezone.now)
 
     # def __str__(self):
     #     return self.paciente, self.nometratamento, self.observacao
 
     def __repr__(self):
-        return f'paciente{self.paciente},tratamento{self.tratamento}, observacao={self.observacao!r}'
+        return f'paciente{self.paciente},tratamento{self.tratamento}, datatratamento{self.data_tratamento}' \
+               f', observacao={self.observacao!r}'
