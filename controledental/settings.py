@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'controledental.base',
     'controledental.pacientes',
+    'controledental.cadastrotratamento',
+    'controledental.tratamento',
 ]
 
 MIDDLEWARE = [

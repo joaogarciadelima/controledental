@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('controledental.base.urls'), name='home'),
     path('pacientes/', include('controledental.pacientes.urls'), name='pacientes'),
+    # path('tratamento/', include('controledental.cadastrotratamento.urls'), name='tratamento')
 ]
 
 if settings.DEBUG:

@@ -128,6 +128,7 @@
                 "sha256:f0d43828003c82dbc9269de87aa449e9896077a71954fbbb10a614c017e65737",
                 "sha256:f78e8b487de4d92640105c1389e5b90be3496b1d75c90a666edd8737cc2dbab7"
             ],
+            "index": "pypi",
             "version": "==2.8.3"
         },
         "python-dateutil": {
@@ -283,6 +284,7 @@
                 "sha256:17c53cd6bf4e7d69902aedf9a1d26c5d3b7369b54c5718744704f27b5a72f35d",
                 "sha256:9a23ada2e43cd989195db3c18710b5d7451134a0d48127ab64c1d2ad81700342"
             ],
+            "index": "pypi",
             "version": "==2.0"
         },
         "entrypoints": {
@@ -389,6 +391,7 @@
                 "sha256:264fb4c506db5d48a6364c311a0b00b7b48a52715bad8839b2d8bee9b99ed6bb",
                 "sha256:4adfe5fb3ed47f0ba55506dd3daf688b1f74d5e69148c10ad2dd2f79f40c0d62"
             ],
+            "index": "pypi",
             "version": "==3.5.1"
         },
         "pytz": {
