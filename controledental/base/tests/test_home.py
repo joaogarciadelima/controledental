@@ -27,4 +27,5 @@ def test_footer_fone(resp):
 
 
 def test_footer_email(resp):
-    assert_contains(resp, '<a href="mailto:joaogarciadelimaneto@gmail.com" class="text-light">joaogarciadelimaneto@gmail.com</a>')
+    assert_contains(resp, '<a href="mailto:joaogarciadelimaneto@gmail.com" class="text-light">'
+                          'joaogarciadelimaneto@gmail.com</a>')
