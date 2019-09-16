@@ -17,10 +17,9 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('controledental.base.urls'), name='home'),
+    path('', include('controledental.base.urls')),
     path('pacientes/', include('controledental.pacientes.urls'), name='pacientes'),
     # path('tratamento/', include('controledental.cadastrotratamento.urls'), name='tratamento')
 ]

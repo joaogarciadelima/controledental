@@ -27,9 +27,6 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'pacientes:pacientes' %}">Pacientes</a>
             </li>
@@ -92,6 +89,31 @@
         </div>
     </div>
 </div>
+
+<footer class="main-footer mt-5 pt-4 text-light">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3>Entre em contato</h3>
+                    <a href="tel:+5537988323652" class="text-light">+55 (37)98832-3652</a>
+                </br>
+                    <a href="mailto:joaogarciadelimaneto@gmail.com" class="text-light">joaogarciadelimaneto@gmail.com</a>
+                </address>
+            </div>
+        </div>
+    </div>
+    <div class="rights pb-4 text-light">
+        <div class="container mb-5">
+            <div class="row">
+                <div class="col">
+                    {% now 'Y' %} João Garcia de Lima. Todos os direitos reservados.
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
 
 </body>
 </html>

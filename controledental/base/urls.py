@@ -5,5 +5,5 @@ from controledental.base.views import home
 
 app_name = 'base'
 urlpatterns = [
-    path('home', home, name='home'),
+    path('', home, name='home'),
 ]
