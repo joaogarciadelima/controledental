@@ -18,5 +18,14 @@ def test_title(resp):
     assert_contains(resp, '<title>Controle dental!</title>')
 
 
-def home_link(resp):
+def test_home_link(resp):
     assert_contains(resp, f'href="{reverse("base:home")}">Controle Dental')
+
+
+def test_footer_fone(resp):
+    assert_contains(resp, '<a href="tel:+5537988323652" class="text-light">+55 (37)98832-3652</a>')
+
+
+def test_footer_email(resp):
+    assert_contains(resp, '<a href="mailto:joaogarciadelimaneto@gmail.com" class="text-light">'
+                          'joaogarciadelimaneto@gmail.com</a>')
