@@ -1,16 +1,12 @@
 import pytest
+from model_mommy import mommy
+
 from controledental.tratamento.models import Tratamento
 
 
 @pytest.fixture
 def tratamento(db):
-    tratamentos = Tratamento(paciente=1,
-                             tratamento=1,
-                             dente="11-INCISIVO CENTRAL SUPERIOR",
-                             observacao="Canal no incisivo central superior"
-                             )
-    tratamentos.save()
-    return [tratamentos]
+    return mommy.make(Tratamento)
 
 
 # def test_status_code(resp):
