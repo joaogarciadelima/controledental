@@ -9,6 +9,7 @@ codecov = "*"
 django-debug-toolbar = "*"
 flake8 = "*"
 pytest-django = "*"
+model-mommy = "*"
 
 [packages]
 django = "*"
