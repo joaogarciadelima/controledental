@@ -10,9 +10,9 @@ class Tratamento(models.Model):
         verbose_name = 'Tratamento'
         verbose_name_plural = 'Tratamentos'
 
-    paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE)
+    paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE,)
     tratamento = models.ForeignKey(CadastroTratamento, on_delete=models.CASCADE, verbose_name='Tratamento',
-                                   default=None)
+                                   default=None,)
     DENTE = [
 
         ("0-TODOS", "TODOS"),
@@ -51,10 +51,8 @@ class Tratamento(models.Model):
     ]
     dente = models.CharField(max_length=60, choices=DENTE, verbose_name='Dente')
     observacao = models.CharField(max_length=5000, verbose_name="Observação")
+    valor_tratamento = models.DecimalField(decimal_places=2, max_digits=8, verbose_name='valor', null=False, default=0)
     data_tratamento = models.DateField(verbose_name="Data Tratamento", default=timezone.now)
-
-    # def __str__(self):
-    #     return self.paciente, self.nometratamento, self.observacao
 
     def __repr__(self):
         return f'paciente{self.paciente},tratamento{self.tratamento}, datatratamento{self.data_tratamento}' \
