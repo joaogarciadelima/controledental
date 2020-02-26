@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils import timezone
-
-from controledental.pacientes.models import Paciente
+from django.contrib.auth import get_user_model
 from controledental.cadastrotratamento.models import CadastroTratamento
 
 
@@ -10,7 +9,7 @@ class Tratamento(models.Model):
         verbose_name = 'Tratamento'
         verbose_name_plural = 'Tratamentos'
 
-    paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE,)
+    paciente = models.ForeignKey(get_user_model(), on_delete=models.CASCADE,)
     tratamento = models.ForeignKey(CadastroTratamento, on_delete=models.CASCADE, verbose_name='Tratamento',
                                    default=None,)
     DENTE = [

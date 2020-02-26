@@ -20,8 +20,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('controledental.base.urls')),
-    path('pacientes/', include('controledental.pacientes.urls'), name='pacientes'),
-    # path('tratamento/', include('controledental.cadastrotratamento.urls'), name='tratamento')
 ]
 
 if settings.DEBUG:

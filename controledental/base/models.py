@@ -1,6 +1,8 @@
 from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
 from django.contrib.auth.models import PermissionsMixin
 from django.core.mail import send_mail
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.db import models
@@ -89,3 +91,31 @@ class User(AbstractBaseUser, PermissionsMixin):
     def email_user(self, subject, message, from_email=None, **kwargs):
         """Send an email to this user."""
         send_mail(subject, message, from_email, [self.email], **kwargs)
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    avatar = models.ImageField(upload_to='profiles/',)
+    data_nascimento = models.DateField(null=True)
+    rg = models.CharField(max_length=25, null=True)
+    cpf = models.CharField(max_length=25)
+    endereco = models.CharField(verbose_name='Endereço', max_length=50)
+    telefone = models.CharField(verbose_name='Telefone', max_length=25)
+    alergia = models.CharField(verbose_name='Alergias', max_length=100)
+    medicamentos = models.CharField(verbose_name='Medicamentos', max_length=500)
+    historico_cirurgias = models.CharField(verbose_name='Cirurgias', max_length=2000)
+    observacao = models.CharField(verbose_name='Observações', max_length=2000)
+
+    class Meta:
+        verbose_name = 'Profile'
+        verbose_name_plural = 'Profiles'
+
+    def __str__(self):
+        return self.user.email
+
+
+@receiver(post_save, sender=User)
+def create_or_update_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
+    instance.profile.save()
