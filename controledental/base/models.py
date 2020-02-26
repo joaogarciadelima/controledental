@@ -95,16 +95,16 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    avatar = models.ImageField(upload_to='profiles/',)
-    data_nascimento = models.DateField(null=True)
-    rg = models.CharField(max_length=25, null=True)
-    cpf = models.CharField(max_length=25)
-    endereco = models.CharField(verbose_name='Endereço', max_length=50)
-    telefone = models.CharField(verbose_name='Telefone', max_length=25)
-    alergia = models.CharField(verbose_name='Alergias', max_length=100)
-    medicamentos = models.CharField(verbose_name='Medicamentos', max_length=500)
-    historico_cirurgias = models.CharField(verbose_name='Cirurgias', max_length=2000)
-    observacao = models.CharField(verbose_name='Observações', max_length=2000)
+    avatar = models.ImageField(upload_to='profiles/', blank=True)
+    data_nascimento = models.DateField(null=True, blank=True)
+    rg = models.CharField(max_length=25, null=True, blank=True)
+    cpf = models.CharField(max_length=25, blank=True)
+    endereco = models.CharField(verbose_name='Endereço', max_length=50, blank=True)
+    telefone = models.CharField(verbose_name='Telefone', max_length=25, blank=True)
+    alergia = models.CharField(verbose_name='Alergias', max_length=100, blank=True)
+    medicamentos = models.CharField(verbose_name='Medicamentos', max_length=500, blank=True)
+    historico_cirurgias = models.CharField(verbose_name='Cirurgias', max_length=2000, blank=True)
+    observacao = models.CharField(verbose_name='Observações', max_length=2000, blank=True)
 
     class Meta:
         verbose_name = 'Profile'
